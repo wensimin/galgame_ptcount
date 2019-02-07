@@ -1,0 +1,185 @@
+spring:
+  datasource:
+    url: 'jdbc:mysql://@maven.jdbc.host@:@maven.jdbc.port@/@maven.jdbc.db@?useSSL=false'
+    username: '@maven.jdbc.username@'
+    password: '@maven.jdbc.password@'
+  jpa:
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: true
+        hbm2ddl:
+        # 禁用此项来加快启动速度，开启则自动创建表和依赖
+#          auto: update
+    open-in-view: false
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    
+logging:
+  level:
+    root: '${log:warn}'
+    shali:
+      tech: 'DEBUG'
+#    org:
+#      springframework:
+#        web: DEBUG
+#        hibernate: ERROR
+
+server:
+  port: '${port:81}'
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: '${context-path:/ptcount}'
+
+# 常量配置
+prop:
+  # 投票等级限制
+  lvlLimit: 9
+  chinese:
+    # 汉化投票楼id
+    threadId: 6023684664
+    # 日语投票楼id
+  japanese:
+    threadId: 6023688076
+    # 单个游戏星限制
+  starLimit: 3
+    # 单个游戏心限制
+  heartLimit: 1
+    # 全部星限制
+  startAllLimit: 5
+    # 全部心限制
+  heartAllLimit: 2
+
+# 别名配置
+synonym:
+  chineseGames :
+    "[托了未来孩子的福，我娶了五个老婆？！]": 俺と５人の嫁さんがラブラブなのは、未来からきた赤ちゃんのおかげに違いない！？
+    "[星恋*twinkle]":
+      - 星恋＊ティンクル
+      - ☆恋*twinkle
+      - ☆恋＊ティンクル
+    "[箱庭的学园]": 箱庭の学園
+    "[上司的妻子是我的前任 ～虽然很讨厌，但却沉溺于下班后的枕营业～]": 上司の妻は、元カノでした ～嫌がりながらも、枕営業に溺れていくアフター5～
+    "[任性highspec]": ワガママハイスペック
+    "[樱花片落恋模样 This is a very sweet love story.]":
+      - 桜ひとひら恋もよう
+      - 樱花片落恋模样
+      - 樱花片落恋模样 this is a very sweet love story.
+    "[记忆之歌]":
+      - Song of Memories
+    "[同級生]":
+      - 同級生
+      - 同级生
+    "[在这苍穹展翅]": この大空に、翼をひろげて
+    "[Tropical Liquor]":
+      - Tropical Liquor
+      - tropical liquor
+    "[我只注视着你]": 僕はキミだけを見つめる～I gaze at only you～
+    "[双子洛丽塔后宫]": ハーレム双子ロリータ
+    "[雨音Switch~我与生病的她以及不停歇的雨…]": 雨音スイッチ ～やまない雨と病んだ彼女そして俺～
+    "[阿特拉克=纳克亚]": アトラク=ナクア
+    "[大帝国]": 大帝国
+    "[雪影 - setsuei -]":
+      - 雪影-setsuei-
+      - 雪影- setsuei -
+    "[茂伸 -happy end-]": ものべの -happy end-
+    "[NEKO-NIN exHeart 2]": 猫忍えくすはーと2
+    "[说谎的娜蕾特与柔情的暗杀者]": 嘘つきナレットの優しい暗殺者
+    "[Fortissimo FA]": fortissimo EXS//Akkord:nächsten Phase
+    "[灰色幻影扳机 第1巻]": グリザイア：ファントムトリガー Vol. 1
+    "[灰色幻影扳机 第2巻]": グリザイア：ファントムトリガー Vol. 2
+    "[爱之钥 甜园夏日]": アイカギ ～アフターデイズ～
+    "[海市蜃楼之馆]": ファタモルガーナの館
+    "[淑女同萌！]": ハロー・レディ！
+    "[凉风的物语]": 涼風のメルト -Where wishes are drawn to each other-
+    "[野良与皇女与流浪猫之心]":
+      - ノラと皇女と野良猫ハート
+      - 野良与皇女与流浪猫之💗
+    "[Riddle Joker]":
+      - Riddle Joker
+      - riddle joker
+    "[NEKOPARA Extra]": ネコぱらExtra 仔ネコの日の約束
+    "[杀恋～悠久流传的恋之歌～]":
+      - サツコイ～悠久なる恋の歌～
+      - 杀恋～悠久流传的恋之歌
+    "[碧海晴空、彼岸相连]": 空と海が、ふれあう彼方
+    "[夏梦渚]": ナツユメナギサ
+    "[9-nine-天色天歌天籁音]": 9-nine-そらいろそらうたそらのおと
+    "[春天的足音]": はるのあしおと
+    "[樱舞少女的轮舞曲～女装主人公们的受难记]": 桜舞う乙女のロンド
+    "[少女理论及其之后的周边]": 乙女理論とその後の周辺 -Belle Époque-
+    "[秘密基地里的秘密事]": 秘密基地で秘め事
+    "[Lamunation!]":
+      - ラムネーション！
+      - lamunation!
+      - lamunation
+    "[Trinoline]": トリノライン
+    "[Love's Sweet Garnish]": 恋ニ、甘味ヲソエテ
+    "[Melty Moment]": MeltyMoment ～メルティモーメント～
+    "[爱上火车]": まいてつ
+    "[Summer Pockets]":
+      - Summer Pockets
+      - summer pockets
+    "[Starless]":
+      - starless
+      - Starless
+    "[Eternal Fantasy]": エターナルファンタジー
+    "[冥色隶姬]": 冥色の隷姫 ～緩やかに廃滅する青珊瑚の森～
+    "[告别回忆 -无垢少女-]": メモリーズオフ -Innocent Fille-
+    "[与我相恋的废柴恶魔]": 僕と恋するポンコツアクマ。
+    "[创刻的动脉]": 創刻のアテリアル
+    "[千之刃涛，桃花染之皇姬]":
+      - 千の刃濤、桃花染の皇姫
+      - 千之刃涛、桃花染的皇姬
+    "[痕]": 痕
+    "[潮风消失之海]": 潮風の消える海に
+    "[青鸟]": アオイトリ
+    "[若能与你再次相见]": できない私が、くり返す。
+    "[深山间溪回荡之歌]": 峰深き瀬にたゆたう唄
+    "[愿望的碎片与白银契约者]": 願いの欠片と白銀の契約者
+    "[春音Alice＊Gram]": 春音アリス＊グラム
+    "[爱莉娅嘉年华]": Alia's Carnival!
+    "[冬天的谎言 -Snow World End-]": フユウソ -Snow World End-
+    "[妹快楽堕ち～お兄ちゃんに無理やりハメられてから～]": 妹快楽堕ち～お兄ちゃんに無理やりハメられてから～
+    "[神待少女纱波]": 神待ちサナちゃん
+    "[Making Lovers]":
+      - Making*Lovers
+      - Making＊Lovers
+      - making lovers
+      - making＊lovers
+      - making*lovers
+    "[黄雷的伽克苏恩]": 黄雷のガクトゥーン～What a shining braves～
+
+  japaneseGames:
+    "[a]": val
+
+  tickets:
+    "[心]":
+      - 心
+      - https://gsp0.baidu.com/5aAHeD3nKhI2p27j8IqW0jdnxx1xbK/tb/editor/images/client/image_emoticon34.png
+      - ❤
+      - https://tb2.bdstatic.com/tb/editor/images/face/i_f34.png?t=20140803
+      - https://tb2.bdstatic.com/tb/editor/images/client/image_emoticon34.png
+      - ♡
+      - ♥
+      - "[爱心]"
+    "[星]":
+      - 星
+      - ☆
+      - ⭐
+      - ★
+      - 🌟
+    1: 一
+    2:
+      - 二
+      - 两
+    3: 三
+    4: 四
+    5: 五
+    6: 六
+    7: 七
+    8: 八
+    9: 九
+    0: 零
